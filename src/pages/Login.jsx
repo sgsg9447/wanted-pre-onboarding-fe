@@ -1,18 +1,40 @@
 import React from 'react';
 import styled from 'styled-components';
 import { FaFacebookSquare } from 'react-icons/fa';
+import useLogin from '../customhook/useLogin';
 
 export default function Login() {
+  const { emailInputRef, form, error, onChange, onSubmit } = useLogin();
   return (
     <LoginContainer>
-      <LoginBox>
+      <LoginBox onSubmit={onSubmit}>
         <LoginImg />
         <LoginInput
-          placeholder="전화번호, 사용자 이름 또는 이메일"
+          placeholder="testID: abc@abc.com"
           isValidated={true}
+          autoComplete="email"
+          name="email"
+          onChange={onChange}
+          value={form.email}
+          error={!error.email}
+          ref={emailInputRef}
         />
-        <LoginInput placeholder="비밀번호" type="password" isValidated={true} />
-        <LoginButton isValidated={true} type="submit">
+        <LoginInput
+          placeholder="testPW: 123456@A"
+          type="password"
+          isValidated={true}
+          autoComplete="password"
+          name="password"
+          onChange={onChange}
+          value={form.password}
+          error={!error.password}
+        />
+        <LoginButton
+          isValidated={true}
+          type="submit"
+          disabled={!(error.email && error.password)}
+          error={error.email && error.password}
+        >
           로그인
         </LoginButton>
         <LineContainer>
@@ -86,7 +108,8 @@ const LoginInput = styled.input`
   height: 38px;
   padding: 10px;
   font-size: 12px;
-  border: 1px solid ${(props) => (props.isValidated ? '#b9b9b9' : 'red')};
+  border: 1px solid;
+  border-color: ${(props) => (props.error ? 'red' : '#dbdbdb')};
   border-radius: 2px;
   margin-bottom: 5px;
 `;
@@ -96,7 +119,7 @@ const LoginButton = styled.button`
   padding: 10px;
   font-size: 14px;
   font-weight: 800;
-  background-color: ${(props) => (props.isValidated ? '#17a0fb' : '#d4eeff')};
+  background-color: ${(props) => (props.error ? '#0099ff' : '#a5aeb4')};
   border-radius: 5px;
   margin-top: 5px;
   color: white;
