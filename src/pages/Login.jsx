@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { FaFacebookSquare } from 'react-icons/fa';
 import useLogin from '../customhook/useLogin';
 
-export default function Login() {
+export default function Login({ user, setUser }) {
   const { emailInputRef, form, error, onChange, onSubmit } = useLogin();
   return (
     <LoginContainer>

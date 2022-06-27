@@ -55,7 +55,7 @@ function useLogin() {
           } catch (e) {
             console.log('localStorage is not working');
           }
-          navigate('/info');
+          navigate('/home');
           break;
         }
       }
