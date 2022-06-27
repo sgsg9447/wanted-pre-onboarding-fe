@@ -1,0 +1,49 @@
+{
+  "feeds": [
+    {
+      "id":1,
+      "name": "sseulgirang",
+      "img": "https://source.unsplash.com/random/500x500",
+      "comments": [
+        {
+          "name": "sseulgirang",
+          "comment": "하이루"
+        },
+        {
+          "name": "팔로워1",
+          "comment": "바이루"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Sseul",
+      "img": "https://source.unsplash.com/random/500x900",
+      "comments": [
+        {
+          "name": "Sseul",
+          "comment": "하이루우."
+        },
+        {
+          "name": "팔로워2",
+          "comment": "바이루우2."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "seulgikim",
+      "img": "https://source.unsplash.com/random/900x500",
+      "comments": [
+        {
+          "name": "seulgikim",
+          "comment": "하이루우우."
+        },
+        {
+          "name": "팔로워3",
+          "comment": "바이루루우우."
+        }
+      ]
+    }
+  ]
+}
