@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Feeds from '../components/Feeds';
 import GNB from '../components/GNB';
 
 function Home({ user, setUser }) {
@@ -17,6 +18,7 @@ function Home({ user, setUser }) {
   return (
     <div>
       <GNB setUser={setUser} />
+      <Feeds />
     </div>
   );
 }
