@@ -1,4 +1,25 @@
-# 0. 폴더구조
+# 원티드 프리온보딩 프론트엔드 코스 사전과제 완료
+## 데모페이지 🖥️
+## 자기소개
+
+
+IT교육 기획 및 운영을 담당하던 서비스기획자에서 서비스개발자가 되려하는 김슬기입니다 👩🏻‍💻
+
+SW 교육 경험 -> 카이스트 비학위과정 SW사관학교 정글3기 수료 (21.11 ~ 22.03)
+
+많이 만들어보는 것 만큼 개발 실력을 높이는 것에 좋은것이 없다 생각되어 하루에 하나씩 작은 기능들을 나누어 구현해보고 있었습니다. 
+
+그러던 중, 원티드 프리온보딩 프로젝트 온보딩 코스를 알게되어 제가 생각한 취업 전 가장 좋은 방법이자 저에게 가장 필요한 코스라 생각되어 지원하게되었습니다.
+
+지금까지는 이론 위주의 공부였다면, 남은 5주간 실전형 프로젝트형 프리온보딩 코스에 참여하여 실력을 높이고 성장하고 싶습니다!
+
+
+### 개발 블로그
+https://velog.io/@sgsg9447
+
+
+## 과제 구현 방법 설명
+### 0. 프로젝트 구조
 ```bash
 ├── public
 │   ├── data
@@ -24,7 +45,7 @@
 └── README.md
 ``` 
 
-## 1. Assignment 1 - Login
+### 1. Assignment 1 - Login
 ✅ 로그인 컴포넌트를 개발합니다. (최소화 - input 2개, button 1개) 
 약간의 랜더링 최적화를 고려해주세요. (Hint: Ref 사용)
 ✅ 로그인 시(ID, PW 입력 후 버튼 클릭)
@@ -60,7 +81,7 @@
   }, [user]);
 ```
 
-## 2. Assignment2 - GNB
+### 2. Assignment2 - GNB
 ✅ 로그인 후 이동하는 메인페이지의 GNB를 구현해주세요.
 ✅ 구현 시 스크롤에 관계 없이 화면 상단에 고정되는 sticky GNB 를 구현해주세요.
 ```jsx
@@ -108,7 +129,7 @@ const OneBtn = styled.div`
 <input placeholder="검색" />
 ```
 
-## 3. Assignment3 - Validation
+### 3. Assignment3 - Validation
 ✅ 이메일과 비밀번호의 유효성을 확인합니다.
 ✅ 이메일 조건 - @ , . 포함
 ✅ 비밀번호 조건 - 대문자, 숫자, 특수문자 포함 8자리 이상
@@ -189,7 +210,7 @@ password:{
 ✅ Validation 함수 분리
 ![](https://velog.velcdn.com/images/sgsg9447/post/94b762e6-c2fe-456c-ba1c-030f8c363691/image.png)
 
-## 4. Assignment4 - Routing
+### 4. Assignment4 - Routing
 ✅ 로그인,로그아웃 시 라우팅 로직을 통해 페이지가 이동 되도록 구현해주세요. (Local Storage)
 ```jsx
 <Routes>
@@ -226,11 +247,13 @@ password:{
   }, [user]);
 ```
 
-## 5. Assignment5 - Feeds
+### 5. Assignment5 - Feeds
 ✅ 피드 컴포넌트를 개발합니다.
+
 ![](https://velog.velcdn.com/images/sgsg9447/post/3d60d822-5158-4706-bb8b-8d36305d9f9b/image.png)
 
 ✅ 레이아웃을 인스타그램과 동일하게 구현해주시면 됩니다. (픽셀 단위까지 맞추실 필요는 없으나 보기에 자연스럽도록 개발해주세요.)
+
 ![](https://velog.velcdn.com/images/sgsg9447/post/a309d02c-8ab1-4f78-9bb9-646cf621bbb5/image.png)
 
 ✅ 각 Feed의 정보는 public/data 디렉토리에 json형식으로 구성하여 fetch, axios 등을 이용하여 data를 요청해야 합니다.
@@ -289,7 +312,7 @@ Feed는 최소 3개이상 랜더링 되도록 구현해주세요.
 }
 
 ```
-🚨 각각의 Feed에 댓글을 추가할 수 있도록 개발해주세요. (Enter key & 클릭으로 게시 가능하도록) 🚨키보드이벤트 구현해야함!!
+🚨 각각의 Feed에 댓글을 추가할 수 있도록 개발해주세요. (Enter key & 클릭으로 게시 가능하도록) 
 ```jsx
 const onEnter = useCallback(
     (e) => {
@@ -302,9 +325,10 @@ const onEnter = useCallback(
 
 ```
 왜 안되지....... 로직은 맞는데.........
+
 ✅ Feed는 화면 중앙에 위치 해야하며 모바일 대응이 가능해야 합니다.
 
-? 게시 후 Input은 초기화 되어야 합니다.
+✅ 게시 후 Input은 초기화 되어야 합니다.
 
 ✅ Feed의 이미지는 자유롭게 사용하시되 각각 사이즈가 각각 달라야 합니다. (ex. 정사각형, 세로가 긴 것, 가로가 긴 것 등)
 (사이즈를 변경하셔도 됩니다. 같은 사이즈 X) 
@@ -314,8 +338,7 @@ const onEnter = useCallback(
 <img src={img} alt="image" loading="lazy" />
 
 ```
-(아이콘은 자유롭게 사용하셔도 괜찮습니다. icon 라이브러리 설치 O)
-메인 Page 전체에 반응형 CSS가 적용 되어있는지 평가합니다. (Media Query 사용)
+✅ 메인 Page 전체에 반응형 CSS가 적용 되어있는지 평가합니다. (Media Query 사용)
 
 ```jsx
 //Feeds.jsx
