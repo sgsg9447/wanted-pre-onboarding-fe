@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Login from './pages/Login';
+import Home from './pages/Home';
+
 import { Route, Routes } from 'react-router-dom';
 
 function App() {
@@ -12,6 +14,7 @@ function App() {
 
   return (
     <Routes>
+      <Route path="/home" element={<Home user={user} setUser={setUser} />} />
       <Route path="login" element={<Login user={user} setUser={setUser} />} />
     </Routes>
   );

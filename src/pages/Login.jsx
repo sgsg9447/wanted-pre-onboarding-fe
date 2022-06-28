@@ -3,7 +3,6 @@ import { FaFacebookSquare } from 'react-icons/fa';
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import LoginInputValidator from '../components/LoginInputValidator';
-
 import { useForm } from 'react-hook-form';
 import { colors } from '../styles/colors';
 import { useNavigate } from 'react-router-dom';
@@ -18,59 +17,70 @@ export default function Login({ user, setUser }) {
   const validate = (e) => {
     localStorage.setItem('user', JSON.stringify(e));
     setUser(e);
-    navigate('/');
+    navigate('/home');
   };
 
   useEffect(() => {
     setLoading(true);
     if (user !== null) {
-      navigate('/');
+      navigate('/home');
     }
     setLoading(false);
   }, [user]);
 
   return (
     <LoginContainer>
-      <LoginBox onSubmit={handleSubmit(validate)}>
-        <LoginImg />
-        <LoginInputValidator
-          register={register}
-          name={'email'}
-          isError={formState.errors.email === undefined ? false : true}
-        />
-        <LoginInputValidator
-          type="password"
-          register={register}
-          name={'password'}
-          isError={formState.errors.password === undefined ? false : true}
-        />
+      {!loading && (
+        <div>
+          <LoginBox onSubmit={handleSubmit(validate)}>
+            <LoginImg />
 
-        <LoginButton valid={formState.isValid} type="submit">
-          로그인
-        </LoginButton>
-        <LineContainer>
-          <Line></Line>
-          <Or>또는</Or>
-          <Line></Line>
-        </LineContainer>
+            <LoginInputValidator
+              register={register}
+              name={'email'}
+              isError={formState.errors.email === undefined ? false : true}
+            />
+            <ErrorContainer>
+              <h2>{formState.errors?.email?.message}</h2>
+            </ErrorContainer>
+            <LoginInputValidator
+              type="password"
+              register={register}
+              name={'password'}
+              isError={formState.errors.password === undefined ? false : true}
+            />
+            <ErrorContainer>
+              <h2>{formState.errors?.password?.message}</h2>
+            </ErrorContainer>
 
-        <FacebookContainer>
-          <FaFacebookSquare />
-          <FacebookText>Facebook으로 로그인</FacebookText>
-        </FacebookContainer>
-        <PasswordText>비밀번호를 잊으셨나요?</PasswordText>
-      </LoginBox>
-      <SignInBox>
-        <span>계정이 없으신가요?</span>
-        <SignInText>가입하기</SignInText>
-      </SignInBox>
-      <DownloadBox>
-        <p>앱을 다운로드 하세요</p>
-        <DownBtnBox>
-          <DownBtnImg />
-          <DownBtnImg2 />
-        </DownBtnBox>
-      </DownloadBox>
+            <LoginButton valid={formState.isValid} type="submit">
+              로그인
+            </LoginButton>
+            <LineContainer>
+              <Line></Line>
+              <Or>또는</Or>
+              <Line></Line>
+            </LineContainer>
+
+            <FacebookContainer>
+              <FaFacebookSquare />
+              <FacebookText>Facebook으로 로그인</FacebookText>
+            </FacebookContainer>
+            <PasswordText>비밀번호를 잊으셨나요?</PasswordText>
+          </LoginBox>
+          <SignInBox>
+            <span>계정이 없으신가요?</span>
+            <SignInText>가입하기</SignInText>
+          </SignInBox>
+          <DownloadBox>
+            <p>앱을 다운로드 하세요</p>
+            <DownBtnBox>
+              <DownBtnImg />
+              <DownBtnImg2 />
+            </DownBtnBox>
+          </DownloadBox>
+        </div>
+      )}
     </LoginContainer>
   );
 }
@@ -114,6 +124,17 @@ const LoginImg = styled.img.attrs({
   margin-bottom: 30px;
 `;
 
+const ErrorContainer = styled.div`
+  height: 10px;
+  h2 {
+    color: ${colors.tomato};
+  }
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  margin:3px
+`;
+
 const LoginButton = styled.button`
   cursor: ${(p) => (p.valid ? 'pointer' : 'no-drop')};
   width: 270px;
@@ -122,7 +143,6 @@ const LoginButton = styled.button`
   border: none;
   padding: 10px;
   border-radius: 5px;
-  margin-top: 5px;
   background-color: ${colors.lightBlue};
   color: white;
   font-weight: 800;

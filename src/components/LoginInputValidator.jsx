@@ -48,10 +48,8 @@ const Input = styled.input.attrs((p) => ({ placeholder: p.placeholder }))`
   font-size: 12px;
   width: 270px;
   height: 38px;
-  margin-bottom: 5px;
   &:focus {
     border: 2px solid ${colors.blue};
     outline: none;
   }
 `;
-
