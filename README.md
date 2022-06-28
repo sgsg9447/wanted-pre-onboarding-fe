@@ -1,7 +1,8 @@
 # 원티드 프리온보딩 프론트엔드 코스 사전과제 완료
 ## 데모페이지 🖥️
 
-![](https://velog.velcdn.com/images/sgsg9447/post/e98b11c3-1ef3-451b-87b9-d764411c9ab2/image.gif)
+![](https://velog.velcdn.com/images/sgsg9447/post/bdda2896-df3d-4fcd-86ac-e71fda191971/image.gif)
+
 ## 자기소개
 
 
