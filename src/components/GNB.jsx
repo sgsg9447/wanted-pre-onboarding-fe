@@ -45,7 +45,7 @@ const Container = styled.div`
     text-align: center;
     padding-left: 20px;
     border-radius: 5px;
-    width: 30%;
+    width: 40%;
   }
   @media (max-width: 550px) {
     input {
@@ -59,7 +59,7 @@ const ButtonBox = styled.div`
   gap: 2vw;
   justify-content: center;
   align-items: center;
-  font-size:28px
+  font-size: 28px;
 `;
 
 const OneBtn = styled.div`

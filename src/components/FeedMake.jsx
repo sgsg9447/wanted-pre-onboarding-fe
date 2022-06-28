@@ -8,6 +8,7 @@ import { IoLogoInstagram } from 'react-icons/io';
 import { BiPaperPlane } from 'react-icons/bi';
 import { BsBookmark } from 'react-icons/bs';
 import { BsEmojiSmile } from 'react-icons/bs';
+import { colors } from '../styles/colors';
 
 
 export default function FeedMake({
@@ -85,6 +86,7 @@ export default function FeedMake({
 const ContentWrap = styled.div`
   margin: 15px 0;
   background-color: white;
+  border: 1px solid ${colors.lightGray};
 
   .like {
     margin: 15px 5px;
