@@ -16,7 +16,7 @@ const FeedItem = ({ feed, comment, onChange, onClick, onEnter }) => {
   return (
     <ContentWrap>
       <div>
-        <ul className="header">
+        <FeedHeader>
           <li>
             <BsCircleFill />
           </li>
@@ -24,11 +24,11 @@ const FeedItem = ({ feed, comment, onChange, onClick, onEnter }) => {
           <li>
             <BiDotsHorizontalRounded />
           </li>
-        </ul>
-        <div className="imgWrap">
+        </FeedHeader>
+        <ImgBox>
           <img src={img} alt="image" loading="lazy" />
-        </div>
-        <ul className="subHeader">
+        </ImgBox>
+        <SubHeader>
           <li>
             <IoMdHeartEmpty />
           </li>
@@ -41,9 +41,9 @@ const FeedItem = ({ feed, comment, onChange, onClick, onEnter }) => {
           <li>
             <BsBookmark />
           </li>
-        </ul>
+        </SubHeader>
         <div className="like">좋아요 0개</div>
-        <div className="comment">
+        <Comment>
           {comments &&
             comments.map((data, index) => {
               return (
@@ -52,8 +52,8 @@ const FeedItem = ({ feed, comment, onChange, onClick, onEnter }) => {
                 </p>
               );
             })}
-        </div>
-        <ul className="commentInput">
+        </Comment>
+        <CommentInput>
           <li>
             <BsEmojiSmile />
           </li>
@@ -68,7 +68,7 @@ const FeedItem = ({ feed, comment, onChange, onClick, onEnter }) => {
           <li tabIndex="1" onKeyDown={onEnter}>
             <button onClick={() => onClick(id)}>게시</button>
           </li>
-        </ul>
+        </CommentInput>
       </div>
     </ContentWrap>
   );
@@ -104,85 +104,91 @@ const Wrap = styled.div`
 const ContentWrap = styled.div`
   margin: 15px 0;
   background-color: white;
-  .header {
-    display: flex;
-    align-items: center;
-    padding: 5px;
-    font-size: 15px;
-    font-weight: bold;
-    svg {
-      font-size: 30px;
-      color: #a5a5a5;
-    }
-    > * {
-      &:nth-of-type(2) {
-        margin-left: 10px;
-      }
-      &:last-of-type {
-        margin-left: auto;
-      }
-    }
-  }
-  .imgWrap {
-    max-width: 420px;
-    height: 420px;
-    text-align: center;
-    background-color: #dbdbdb;
-    img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }   
-  }
-  .subHeader {
-    display: flex;
-    align-items: center;
-    padding: 5px;
-    font-size: 22px;
-    svg {
-      margin-right: 5px;
-    }
-    > * {
-      &:last-of-type {
-        margin-left: auto;
-      }
-    }
-  }
+
   .like {
     margin: 15px 5px;
     font-size: 13px;
     font-weight: bold;
   }
-  .comment {
-    margin: 30px 5px;
-    font-size: 13px;
-    font-weight: bold;
-    p {
-      margin: 5px 0;
+`;
+
+const FeedHeader = styled.ul`
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  font-size: 15px;
+  font-weight: bold;
+  svg {
+    font-size: 30px;
+    color: #a5a5a5;
+  }
+  > * {
+    &:nth-of-type(2) {
+      margin-left: 10px;
+    }
+    &:last-of-type {
+      margin-left: auto;
     }
   }
-  .commentInput {
-    display: flex;
-    align-items: center;
-    padding: 10px 5px;
-    border-top: 1px solid #dbdbdb;
-    input {
-      width: 320px;
-      margin-left: 10px;
-      &::placeholder {
-        font-weight: bold;
-      }
+`;
+
+const ImgBox = styled.div`
+  max-width: 420px;
+  height: 420px;
+  text-align: center;
+  background-color: #dbdbdb;
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+`;
+
+const SubHeader = styled.ul`
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  font-size: 22px;
+  svg {
+    margin-right: 5px;
+  }
+  > * {
+    &:last-of-type {
+      margin-left: auto;
     }
-    > * {
-      &:last-of-type {
-        margin-left: auto;
-        button {
-          background-color: white;
-          font-size: 15px;
-          font-weight: bold;
-          color: #4ec2f8;
-        }
+  }
+`;
+
+const Comment = styled.div`
+  margin: 30px 5px;
+  font-size: 13px;
+  font-weight: bold;
+  p {
+    margin: 5px 0;
+  }
+`;
+
+const CommentInput = styled.ul`
+  display: flex;
+  align-items: center;
+  padding: 10px 5px;
+  border-top: 1px solid #dbdbdb;
+  input {
+    width: 320px;
+    margin-left: 10px;
+    &::placeholder {
+      font-weight: bold;
+    }
+  }
+  > * {
+    &:last-of-type {
+      margin-left: auto;
+      button {
+        background-color: white;
+        font-size: 15px;
+        font-weight: bold;
+        color: #4ec2f8;
       }
     }
   }
