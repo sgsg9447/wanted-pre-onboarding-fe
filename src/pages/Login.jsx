@@ -7,8 +7,9 @@ import { useForm } from 'react-hook-form';
 import { colors } from '../styles/colors';
 import { useNavigate } from 'react-router-dom';
 
-export default function Login({ user, setUser }) {
+export default function Login({ user, setUser, emailRef }) {
   const navigate = useNavigate();
+
   const [loading, setLoading] = useState(true);
 
   const { register, handleSubmit, formState } = useForm({
@@ -132,7 +133,7 @@ const ErrorContainer = styled.div`
   font-size: 12px;
   display: flex;
   flex-direction: column;
-  margin:3px
+  margin: 3px;
 `;
 
 const LoginButton = styled.button`

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import { colors } from '../styles/colors';
 
@@ -27,12 +27,19 @@ export default function LoginInputValidator({
   type,
   isError,
 }) {
+  const emailRef = useRef();
+
+  useEffect(() => {
+    emailRef.current.focus();
+  }, []);
+
   return (
     <Input
       type={type}
       isError={isError}
       {...register(name, VALIDATOR[name])}
       placeholder={placeholder}
+      ref={emailRef}
     />
   );
 }
