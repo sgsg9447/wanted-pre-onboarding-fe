@@ -35,7 +35,6 @@ export default function Login({ user, setUser, emailRef }) {
         <div>
           <LoginBox onSubmit={handleSubmit(validate)}>
             <LoginImg />
-
             <LoginInputValidator
               register={register}
               name={'email'}

@@ -27,11 +27,7 @@ export default function LoginInputValidator({
   type,
   isError,
 }) {
-  const emailRef = useRef();
 
-  useEffect(() => {
-    emailRef.current.focus();
-  }, []);
 
   return (
     <Input
@@ -39,7 +35,6 @@ export default function LoginInputValidator({
       isError={isError}
       {...register(name, VALIDATOR[name])}
       placeholder={placeholder}
-      ref={emailRef}
     />
   );
 }
