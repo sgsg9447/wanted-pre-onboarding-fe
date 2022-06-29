@@ -51,8 +51,10 @@ https://velog.io/@sgsg9447
 ### 1. Assignment 1 - Login
 ✅ 로그인 컴포넌트를 개발합니다. (최소화 - input 2개, button 1개) 
 약간의 랜더링 최적화를 고려해주세요. (Hint: Ref 사용)
+
 ✅ 로그인 시(ID, PW 입력 후 버튼 클릭)
-- useRef dom 조작
+
+✅ useRef dom 조작
 ```jsx
   const emailRef = useRef();
 
@@ -315,6 +317,18 @@ Feed는 최소 3개이상 랜더링 되도록 구현해주세요.
 }
 
 ```
+
+```jsx
+useEffect(() => {
+    async function init() {
+      const { data } = await axios.get('/data/feeds.json');
+      setFeeds(data.feeds);
+    }
+    init();
+  }, []);
+
+```
+
 🚨 각각의 Feed에 댓글을 추가할 수 있도록 개발해주세요. (Enter key & 클릭으로 게시 가능하도록) 
 ```jsx
 const onEnter = useCallback(
