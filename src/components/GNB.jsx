@@ -7,7 +7,6 @@ import { FaPlusSquare } from 'react-icons/fa';
 import { FaHeart } from 'react-icons/fa';
 
 export default function GNB({ setUser }) {
-  const navigate = useNavigate();
   const handleLogout = () => {
     localStorage.removeItem('user');
     setUser(null);

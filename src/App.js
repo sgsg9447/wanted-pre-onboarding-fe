@@ -15,8 +15,11 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path="/home" element={<Home user={user} setUser={setUser} />} />
-        <Route path="login" element={<Login user={user} setUser={setUser} />} />
+        <Route path="/" element={<Home user={user} setUser={setUser} />} />
+        <Route
+          path="/login"
+          element={<Login user={user} setUser={setUser} />}
+        />
       </Routes>
     </>
   );
