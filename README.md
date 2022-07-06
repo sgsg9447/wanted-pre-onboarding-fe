@@ -381,7 +381,7 @@ const ImgBox = styled.div`
     }
   }
 ```
-
+```bash
 테스트중 
 📦wanted-pre-onboarding-fe
  ┣ 📂.git
@@ -474,3 +474,4 @@ const ImgBox = styled.div`
  ┣ 📜package-lock.json
  ┣ 📜package.json
  ┗ 📜read.txt
+```
