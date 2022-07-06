@@ -381,3 +381,96 @@ const ImgBox = styled.div`
     }
   }
 ```
+
+테스트중 
+📦wanted-pre-onboarding-fe
+ ┣ 📂.git
+ ┃ ┣ 📂hooks
+ ┃ ┃ ┣ 📜applypatch-msg.sample
+ ┃ ┃ ┣ 📜commit-msg.sample
+ ┃ ┃ ┣ 📜fsmonitor-watchman.sample
+ ┃ ┃ ┣ 📜post-update.sample
+ ┃ ┃ ┣ 📜pre-applypatch.sample
+ ┃ ┃ ┣ 📜pre-commit.sample
+ ┃ ┃ ┣ 📜pre-merge-commit.sample
+ ┃ ┃ ┣ 📜pre-push.sample
+ ┃ ┃ ┣ 📜pre-rebase.sample
+ ┃ ┃ ┣ 📜pre-receive.sample
+ ┃ ┃ ┣ 📜prepare-commit-msg.sample
+ ┃ ┃ ┣ 📜push-to-checkout.sample
+ ┃ ┃ ┗ 📜update.sample
+ ┃ ┣ 📂info
+ ┃ ┃ ┗ 📜exclude
+ ┃ ┣ 📂logs
+ ┃ ┃ ┣ 📂refs
+ ┃ ┃ ┃ ┣ 📂heads
+ ┃ ┃ ┃ ┃ ┗ 📜main
+ ┃ ┃ ┃ ┗ 📂remotes
+ ┃ ┃ ┃ ┃ ┗ 📂origin
+ ┃ ┃ ┃ ┃ ┃ ┗ 📜HEAD
+ ┃ ┃ ┗ 📜HEAD
+ ┃ ┣ 📂objects
+ ┃ ┃ ┣ 📂info
+ ┃ ┃ ┗ 📂pack
+ ┃ ┃ ┃ ┣ 📜pack-da6584f0e2ec7a1bc4fdcfdf083e73ddca7efc07.idx
+ ┃ ┃ ┃ ┗ 📜pack-da6584f0e2ec7a1bc4fdcfdf083e73ddca7efc07.pack
+ ┃ ┣ 📂refs
+ ┃ ┃ ┣ 📂heads
+ ┃ ┃ ┃ ┗ 📜main
+ ┃ ┃ ┣ 📂remotes
+ ┃ ┃ ┃ ┗ 📂origin
+ ┃ ┃ ┃ ┃ ┗ 📜HEAD
+ ┃ ┃ ┗ 📂tags
+ ┃ ┣ 📜HEAD
+ ┃ ┣ 📜config
+ ┃ ┣ 📜description
+ ┃ ┣ 📜index
+ ┃ ┗ 📜packed-refs
+ ┣ 📂.vscode
+ ┃ ┗ 📜settings.json
+ ┣ 📂public
+ ┃ ┣ 📂img
+ ┃ ┃ ┗ 📜logo.png
+ ┃ ┣ 📜favicon.ico
+ ┃ ┣ 📜index.html
+ ┃ ┣ 📜logo192.png
+ ┃ ┣ 📜logo512.png
+ ┃ ┣ 📜manifest.json
+ ┃ ┗ 📜robots.txt
+ ┣ 📂server
+ ┃ ┣ 📜data.json
+ ┃ ┗ 📜server.js
+ ┣ 📂src
+ ┃ ┣ 📂components
+ ┃ ┃ ┣ 📂common
+ ┃ ┃ ┃ ┗ 📜Logo.jsx
+ ┃ ┃ ┣ 📂login
+ ┃ ┃ ┃ ┣ 📜Button.jsx
+ ┃ ┃ ┃ ┣ 📜Input.jsx
+ ┃ ┃ ┃ ┗ 📜Login.jsx
+ ┃ ┃ ┗ 📂main
+ ┃ ┃ ┃ ┣ 📜CommentForm.jsx
+ ┃ ┃ ┃ ┣ 📜Feed.jsx
+ ┃ ┃ ┃ ┣ 📜FeedList.jsx
+ ┃ ┃ ┃ ┣ 📜GNB.jsx
+ ┃ ┃ ┃ ┗ 📜Main.jsx
+ ┃ ┣ 📂pages
+ ┃ ┃ ┣ 📜LoginPage.jsx
+ ┃ ┃ ┗ 📜MainPage.jsx
+ ┃ ┣ 📂styles
+ ┃ ┃ ┗ 📜globalStyles.js
+ ┃ ┣ 📂utils
+ ┃ ┃ ┣ 📂hooks
+ ┃ ┃ ┃ ┗ 📜useInput.js
+ ┃ ┃ ┣ 📜getFeeds.js
+ ┃ ┃ ┣ 📜uploadComment.js
+ ┃ ┃ ┗ 📜validator.js
+ ┃ ┣ 📜App.jsx
+ ┃ ┗ 📜index.js
+ ┣ 📜.eslintrc
+ ┣ 📜.gitignore
+ ┣ 📜.prettierrc
+ ┣ 📜README.md
+ ┣ 📜package-lock.json
+ ┣ 📜package.json
+ ┗ 📜read.txt
